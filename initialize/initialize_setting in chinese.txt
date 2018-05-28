@@ -1,12 +1,12 @@
-設定 HC-05
+<設定 HC-05>
 
-
-ardunio 改NR&CR
-
-首先，當然是要以 AT command mode ，先設定一下兩片 HC-05，主要是讓它們扮演不同的角色：slave 和 master (出廠時，預設是 slave)；除此之外， 通訊時，UART 的 baud rate 也要設為一樣......。
+當然是要以 AT command mode，要進入AT-mode 要先按住HC-05 上的一個按鈕，在後再將電源插上
+就會發現有大用3秒一次的閃爍，表示HC-05，已經進入AT-mode
+設定一下兩片 HC-05，主要是讓它們扮演不同的角色：slave 和 master (出廠時，預設是 slave)；
+除此之外， 通訊時，UART 的 baud rate 也要設為一樣......。
 
 假設兩片 HC-05 要以 115200 的 baud rate 通訊，並且只鎖定對方連線，可能要進行以下的設定：
-
+ardunio 的serial窗中要改為NR&CR
 在當 slave 的 HC-05 必須執行的 AT command ：
 AT+UART=115200,0,0
 AT+CMODE=0
